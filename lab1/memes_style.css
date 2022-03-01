@@ -1,0 +1,112 @@
+header, div, li, main, aside, article, footer {
+	box-sizing: border-box;
+}
+
+body {
+	background-attachment: fixed;
+	background-image: url(images/geo.jpg);
+	background-size: 60px 60px;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+header {
+    display: flex;
+    flex: 1;
+    background-color: #FCF8D6;
+    border-radius: 10px;
+    border: 2px solid #D6876F;
+}
+
+#mora {
+    width: 60px;
+}
+
+header div {
+    font-family: Cinzel;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #8F3711;
+    padding: 10px;
+    margin: auto;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    float: left;
+    border: 2px solid #D6876F;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+main article {
+    width: 85%;
+    border-radius: 0px 10px 10px 0px;
+    background-color: rgba(255, 255, 255);
+}
+
+article, aside {
+    padding: 30px;
+}
+
+main aside {
+    border-right: 2px solid #D6876F;
+    border-radius: 10px 0px 0px 10px;
+    width: 15%;
+    background-color: #FCF8D6;
+    color: #8F3711;
+}
+
+.heading {
+    border: 2px solid #D6876F;
+    border-left: none;
+    color: #8F3711;
+    font-weight: bold;
+    background-color: #FCF8D6;
+    border-radius: 0px 10px 10px 0px;
+    font-size: 1.2em;
+    margin-left: -30px;
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+    width: 50%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#pictures {
+    display: flex;
+    width: 100%;
+    flex-wrap:wrap;
+}
+
+#pictures img {
+    height: 200px;
+    object-fit: cover;
+}
+
+aside a {
+    text-decoration: none;
+    color: #8F3711;
+    font-weight: bold;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+aside ul {
+	padding: 0;
+	margin-bottom: 50px;
+}
+
+aside ul li {
+	margin-top: 10px;
+	margin-left: 10px;
+	list-style-type: circle;
+	word-wrap: break-word;
+}
