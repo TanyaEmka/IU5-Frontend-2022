@@ -7,6 +7,19 @@
  */
 function getAnagramms(arr) {
     let answer = [];
+    let bases = [];
+    arr.map((current, index) => {
+        let prom_str = current.toLowerCase().split("").sort().join("");
+        if (bases.indexOf(prom_str) == -1) {
+            bases.push(prom_str);
+            answer.push([]);
+        }
+    });
+    arr.map((current, index) => {
+        let ind = bases.indexOf(current.toLowerCase().split("").sort().join(""));
+        if (ind != -1)
+            answer[ind].push(current);
+    })
     return answer;
 }
 
