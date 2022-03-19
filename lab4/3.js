@@ -8,7 +8,24 @@
  */
 
 function rle(str) {
-    //code here
+    let prev = "";
+    let answer = "";
+    let symbols = [];
+    let numbers = [];
+    str.split("").map((current) => {
+        if (current == prev) {
+            numbers[numbers.length - 1]++;
+        }
+        else {
+            symbols.push(current);
+            numbers.push(1);
+            prev = current;
+        }
+    });
+    symbols.map((current, index) => {
+        answer += current + (numbers[index] > 1 ? numbers[index].toString() : "");
+    });
+    return answer;
 }
 
 module.exports = rle;

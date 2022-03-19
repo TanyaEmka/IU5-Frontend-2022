@@ -6,7 +6,8 @@
  * ['мир', 'Рим', 'сирота', 'Ариост', 'мри', 'пва', 'лор', 'авп']; -> [["мир", "Рим", "мри"], ["сирота", "Ариост"], ["пва", "авп"]]
  */
 function getAnagramms(arr) {
-    //code here
+    let answer = [];
+    return answer;
 }
 
 module.exports = getAnagramms;
