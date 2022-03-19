@@ -11,7 +11,22 @@
  */
 
 function checkBrackets(str) {
-    //code here
+    let queue = [];
+    let l_staples = ['(', '[', '<'];
+    let r_staples = [')', ']', '>'];
+    let answer = true;
+    str.split("").map((current, index) => {
+        if (l_staples.indexOf(current) != -1)
+            queue.push(current);
+        let last_ind = queue.length - 1;
+        if (r_staples.indexOf(current) != -1 && queue.length != 0) {
+            if (l_staples.indexOf(queue[last_ind]) == r_staples.indexOf(current))
+                queue.pop();
+            else
+                answer = false;
+        }
+    });
+    return answer;
 }
 
 module.exports = checkBrackets;
