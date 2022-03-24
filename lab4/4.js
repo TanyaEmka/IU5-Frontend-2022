@@ -16,10 +16,10 @@
 ]; ---> [1, 2, "aa", 1, 2, 3, 1, 2, 1, 2, 1, 2, 1, 2, 2, 3, 4]
 */
 
-function w_array(arr, answer) {
+function wArray(arr, answer) {
     for (element of arr) {
         if (typeof element == 'object')
-            w_array(element, answer);
+            wArray(element, answer);
         else 
             answer.push(element);
     }    
@@ -27,7 +27,7 @@ function w_array(arr, answer) {
 
 function get1DArray(arr) {
     let answer = [];
-    w_array(arr, answer);
+    wArray(arr, answer);
     return answer;
 }
 

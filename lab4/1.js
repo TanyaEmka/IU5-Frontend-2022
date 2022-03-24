@@ -6,7 +6,7 @@
  * ['мир', 'Рим', 'сирота', 'Ариост', 'мри', 'пва', 'лор', 'авп']; -> [["мир", "Рим", "мри"], ["сирота", "Ариост"], ["пва", "авп"]]
  */
 function getAnagramms(arr) {
-    let answer = [];
+    const answer = [];
     let bases = [];
     arr.map((current, index) => {
         let prom_str = current.toLowerCase().split("").sort().join("");
