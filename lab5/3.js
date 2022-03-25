@@ -7,7 +7,7 @@
  */
 
 function customBind(f, context) {
-    //code here
+    return f.bind(context);
 }
 
 module.exports = customBind;
