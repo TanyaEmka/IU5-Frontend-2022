@@ -22,7 +22,9 @@
  */
 
 function makeRoute(arr) {
-    //code here
+    return arr.sort((a, b) => {
+        return (a.to < b.to) ? -1 : 1;
+    })
 }
 
 module.exports = makeRoute;
