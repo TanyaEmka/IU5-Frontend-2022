@@ -1,0 +1,105 @@
+body {
+    margin-top: 0px;
+}
+
+.nav {
+    padding-top: 10vh;
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-left: 5vh;
+    background-color: #a7ebfa;
+    display: flex;
+    flex: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.city_name {
+    color: white;
+    font-size: 5vh;
+    font-weight: bold;
+    font-family: "Luminari, fantasy";
+    margin-left: 5vh;
+    background-color: #d2aafa;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.city_name p {
+    background-color: #695cf2;
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+
+.search {
+    margin-right: 5vh;
+    margin-bottom: 2vh;
+    align-items: center;
+}
+
+.search input {
+    height: 5vh;
+    background: white;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: none;
+}
+
+.search button {
+    background: none;
+    cursor: pointer;
+    border: none;
+    margin-left: 1vh;
+}
+
+.search button img {
+    height: 5vh;
+}
+
+.info_card {
+    background: url(images/weather.jpg);
+    height: 30vh;
+    border: 2px solid #d2aafa;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 0px;
+    margin-left: 5vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.weather {
+    color: #695cf2;
+}
+
+.weather .temp {
+    font-size: 7vh;
+    font-family: "Impact";
+    margin-left: 5vh;
+}
+
+.weather .other {
+    font-size: 3vh;
+    text-align: right;
+    margin-right: 5vh;
+    font-family: "Luminari, fantasy";
+}
+
+@media screen and (min-width: 820px) {
+    .nav, .info_card {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .nav, .info_card {
+        margin-right: 5vh;
+    }
+
+    .search {
+        position: absolute;
+        top: 1vh;
+        left: 10vh;
+    }
+}
