@@ -59,7 +59,7 @@ body {
 }
 
 .info_card {
-    background: url(images/weather.jpg);
+    background: url(images/weather2.jpg);
     height: 30vh;
     border: 2px solid #d2aafa;
     border-radius: 0px 0px 10px 10px;
@@ -79,11 +79,15 @@ body {
     margin-left: 5vh;
 }
 
-.weather .other {
+.weather .other, .desc {
     font-size: 3vh;
     text-align: right;
-    margin-right: 5vh;
-    font-family: "Luminari, fantasy";
+    margin-right: 5vh;   
+}
+
+.desc, .other {
+    font-weight: bold;
+    font-family: "Arial Narrow";
 }
 
 @media screen and (min-width: 820px) {
