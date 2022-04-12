@@ -10,26 +10,29 @@
     <body>
         <div class="weather_form">
             <div class="nav">
-                <div class="city_name">
-                    <p id="header">Москва</p>
-                </div>
                 <div class="search">
                     <input class="search_text" id="search_text" type="text" placeholder="Введите город">
-                    <button id="button">
+                    <div id="button">
                         <img src="images/search.png">
-                    </button>
+                    </div>
+                </div>
+                <div class="city_name">
+                    <p id="header"></p>
                 </div>
             </div>
             <div class="info_card">
                 <div class="weather">
-                    <p>
-                        <span class="temp" id="temp"></span>
-                        <img src="" id="icon">
-                        <span class="desc" id="desc"></span>
-                    </p>
-                    <p class="other" id="other"></p>
+                    <div class="info">
+                        <div class="temp"><span id="temp"></span></div>
+                        <div class="desc"><span id="desc"></span></div>
+                    </div>
+                    <img src="" id="icon">
                 </div>
+                <p class="other" id="other"></p>
             </div>
+        </div>
+        <div class="background_img">
+            <img src="images/background.png">
         </div>
         <script src="setting.js"></script>
     </body>
