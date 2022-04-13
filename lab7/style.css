@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "RomanS";
+    src: url("..fonts/RomanS/RomanS.ttf") format("truetype");
+    src: url("..fonts/RomanS/RomanS.woff") format("woff");
+    src: url("..fonts/RomanS/RomanS.eot");
+    src: url("..fonts/RomanS/RomanS.eot?#iefix") format("embedded-opentype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
 body {
     margin-top: 0px;
     height: 100vh;
