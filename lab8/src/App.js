@@ -73,7 +73,7 @@ function App() {
              <button
               className="change_button"
               onClick={(e) => forChacngeElement(e, item)}>
-                <img src="images/edit.png"/>
+                <img src="images/edit.png" alt="image"/>
               </button>
           </div>);
         })}
