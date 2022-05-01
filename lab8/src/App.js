@@ -56,7 +56,7 @@ function App() {
   
   function update(e) {
     console.log(isChange);
-    if (isChange == false)
+    if (isChange === false)
       addCommand(e);
     else
       changeElement(e);
