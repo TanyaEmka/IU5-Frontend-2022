@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "RomanS";
+    src: url("..fonts/RomanS/RomanS.ttf") format("truetype");
+    src: url("..fonts/RomanS/RomanS.woff") format("woff");
+    src: url("..fonts/RomanS/RomanS.eot");
+    src: url("..fonts/RomanS/RomanS.eot?#iefix") format("embedded-opentype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+body {
+    margin-top: 0px;
+    height: 100vh;
+    margin-left: 0px;
+    font-family: "RomanS";
+    background: linear-gradient(#4049b4, #8b9ceb);
+}
+
+.weather_form {
+    color: white;
+}
+
+.search_text {
+    background: none;
+    border-bottom: 2.2px solid white;
+    padding-bottom: 3px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    width: 20vh;
+    color: white;
+    font-family: "RomanS";
+}
+
+.search_text:focus {
+    outline: none !important;
+}
+
+.search input[type="text"]::-webkit-input-placeholder {
+    color: #8b9ceb;
+}
+
+.city_name, .temp {
+    font-size: 3vh;
+}
+
+.city_name {
+    margin-top: 7vh;
+}
+
+.city_name p {
+    border-bottom: 2.2px solid white;
+    display: inline;
+}
+
+.desc {
+    font-size: 2vh;
+}
+
+.search {
+    align-items: flex-end;
+    margin-top: 3vh;
+    display: flex;
+    flex: 1;
+}
+
+#button img {
+    margin-top: 2.2px;
+    height: 2.5vh;
+}
+
+#button {
+    background: none;
+    border: none;
+    position: relative;
+    margin-left: 1vh;
+    padding: 0;
+    height: 2.5vh;
+}
+
+.background_img img {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+.weather {
+    display: inline-flex;
+    flex: 1;
+    margin-top: 5vh;
+    background-color: rgba(255, 255, 255, 0.21);
+    border-radius: 10px;
+    padding-left: 1.5vh;
+    max-width: 70%;
+}
+
+.info {
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.temp {
+    margin-top: 1.5vh;
+}
+
+.desc {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.other {
+    margin-right: 3vh;
+}
+
+@media screen and (min-width: 820px) {
+    .weather {
+        margin-top: 7vh;
+    }
+}
+
+@media screen and (max-width: 819px) {
+    .weather {
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .weather_form {
+        margin-left: 5vh;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .weather_form {
+        margin-left: 7vh;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .search {
+        margin-right: 3vh;
+        justify-content: end;
+    }
+}

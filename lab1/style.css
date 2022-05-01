@@ -1,0 +1,172 @@
+header, div, li, main, aside, article, footer {
+	box-sizing: border-box;
+}
+
+body {
+	background-attachment: fixed;
+	background-image: url(images/geo.jpg);
+	background-size: 60px 60px;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+header {
+    display: flex;
+    flex: 1;
+    background-color: #FCF8D6;
+    border-radius: 10px;
+    border: 2px solid #D6876F;
+}
+
+#mora {
+    width: 60px;
+}
+
+header div {
+    font-family: Cinzel;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #8F3711;
+    padding: 10px;
+    margin: auto;
+}
+
+nav {
+    margin-bottom: 10px;
+	width: 70%;
+	margin-left: 15%;
+	text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0 30px;
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+    border: 5px double #D6876F;
+    border-top: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 15px;
+    padding: 10px 30px;
+    font-family: 'PT Sans Caption', sans-serif;
+    color: #F0C26E;
+    transition: .3s linear;
+    position: relative;
+}
+
+nav a:before, nav a:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 3px);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F58262;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+nav a:before {
+    left: 5px;
+}
+
+nav a:after {
+    right: 5px;
+}
+
+nav a:before, nav a:after, nav a:hover:before, nav a:hover:after {
+    opacity: 1;
+}
+
+nav a:hover {
+    color: #F58262;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    float: left;
+    border: 2px solid #D6876F;
+    border-radius: 10px;
+}
+
+#main_text {
+    padding-right: 30px;
+    text-align: justify;
+}
+
+#attention {
+    color: gray;
+}
+
+article, aside {
+    padding: 30px;
+}
+
+article {
+    width: 70%;
+    background-color: white;
+    display: flex;
+}
+
+article div {
+    width: 50%;
+}
+
+#main-picture {
+    width: 100%;
+}
+
+aside {
+    width: 15%;
+    background-color: #FCF8D6;
+    color: #8F3711;
+}
+
+#left-aside {
+    border-radius: 10px 0px 0px 10px;
+}
+
+#right-aside {
+    border-radius: 0px 10px 10px 0px;
+}
+
+#right-aside a:active, #right-aside a:visited, #right-aside a:hover, #right-aside a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    color: #8F3711;
+}
+
+footer {
+	margin-bottom: 20px;
+	margin-left: 15%;
+	border-radius: 0px 0px 10px 10px;
+	float: left;
+	width: 70%;
+    background-color: white;
+	padding: 10px;
+}
+
+#footer-picture {
+    width: 50%;
+    margin-left: 25%;
+}
+
+
