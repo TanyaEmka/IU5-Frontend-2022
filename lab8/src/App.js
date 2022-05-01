@@ -3,37 +3,89 @@ import "./App.css";
 
 const Title = () => {
   return (
-    <span class="todos">Todos:</span>
+    <div className="todos">Todos:</div>
   );
 };
 
 const CheckBox = ({name}) => {
   return (
-    <div class="point">
+    <div className="point">
       <input type="checkbox"></input>
       <span>{name}</span>
     </div>
   );
 };
 
-function addCommand() {
-  return "New command";
-}
-
-const Button = () => {
-  return (
-    <button onClick={addCommand}>
-      <span>Add</span>
-    </button>
-  );
-};
-
 function App() {
+
+  const [commandArray, setArray] = useState(['Point1', 'Point2']);
+  const [newCommand, setValue] = useState('');
+  const [buttonValue, setButton] = useState('Add');
+  const [isChange, setChange] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  function forChacngeElement(e, item) {
+    setChange(true);
+    setIndex(item);
+    console.log(isChange);
+    setValue(commandArray[item]);
+    setButton('Change');
+  }
+
+  function changeElement(e) {
+    setArray(
+      [
+        ...commandArray.slice(0, index),
+        newCommand === "" ? "New point" : newCommand,
+        ...commandArray.slice(index + 1)
+      ]
+    );
+    setChange(false);
+    setButton('Add');
+    setValue('');
+    console.log(isChange);
+  }
+
+  function addCommand(e) {
+    setArray([...commandArray, newCommand === "" ? "New point" : newCommand]);
+  }
+
+  function addValue(e) {
+    setValue(e.target.value);
+  }
+  
+  function update(e) {
+    console.log(isChange);
+    if (isChange == false)
+      addCommand(e);
+    else
+      changeElement(e);
+  }
+
   return (
-    <div class="card">
+    <div className="card">
       <Title />
-      <CheckBox name="Create a lab" />
-      <Button />
+      <div className="points">
+        {commandArray.map((element, item) => {
+          return (
+          <div className="element" key={item}>
+             <CheckBox name={element} />
+             <button
+              className="change_button"
+              onClick={(e) => forChacngeElement(e, item)}>
+                <img src="images/edit.png"/>
+              </button>
+          </div>);
+        })}
+      </div>
+      <div className="form">
+        <input type="text" value={newCommand}
+          onChange={addValue}
+          placeholder="New point"
+          className="text"
+        />
+        <input type="button" value={buttonValue} onClick={update} className="button" />
+      </div>
     </div>
   );
 }
