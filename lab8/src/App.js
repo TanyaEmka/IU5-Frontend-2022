@@ -24,43 +24,43 @@ function App() {
   const [isChange, setChange] = useState(false);
   const [index, setIndex] = useState(0);
 
-  function forChacngeElement(e, item) {
-    setChange(true);
-    setIndex(item);
-    console.log(isChange);
-    setValue(commandArray[item]);
-    setButton('Change');
-  }
+  const forChacngeElement = (e, item) => {
+      setChange(true);
+      setIndex(item);
+      console.log(isChange);
+      setValue(commandArray[item]);
+      setButton('Change');
+    }
 
-  function changeElement(e) {
-    setArray(
-      [
-        ...commandArray.slice(0, index),
-        newCommand === "" ? "New point" : newCommand,
-        ...commandArray.slice(index + 1)
-      ]
-    );
-    setChange(false);
-    setButton('Add');
-    setValue('');
-    console.log(isChange);
-  }
+  const changeElement = (e) => {
+      setArray(
+        [
+          ...commandArray.slice(0, index),
+          newCommand === "" ? "New point" : newCommand,
+          ...commandArray.slice(index + 1)
+        ]
+      );
+      setChange(false);
+      setButton('Add');
+      setValue('');
+      console.log(isChange);
+    }
 
-  function addCommand(e) {
+  const addCommand = (e) => {
     setArray([...commandArray, newCommand === "" ? "New point" : newCommand]);
-  }
+    }
 
-  function addValue(e) {
-    setValue(e.target.value);
-  }
+  const addValue = (e) => {
+      setValue(e.target.value);
+    }
   
-  function update(e) {
-    console.log(isChange);
-    if (isChange === false)
-      addCommand(e);
-    else
-      changeElement(e);
-  }
+  const update = (e) => {
+      console.log(isChange);
+      if (isChange === false)
+        addCommand(e);
+      else
+        changeElement(e);
+    }
 
   return (
     <div className="card">
