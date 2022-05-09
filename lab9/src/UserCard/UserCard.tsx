@@ -14,12 +14,7 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
     }
   
     const [shortUser, setShortUser] = useState(initUser);
-    const [isLoading, setLoading] = useState(false);
     const [firstString, setFirstString] = useState("");
-
-    useEffect(() => {
-      setLoading(false);
-    })
   
     useEffect(() => {
       trackPromise(
@@ -42,7 +37,6 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
           else 
             setFirstString(shortUser.name + " | " + login);
           setShortUser(initUser);
-          setLoading(true);
         })
       );
     }, [login]);
