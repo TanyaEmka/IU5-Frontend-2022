@@ -4,6 +4,7 @@ import { UserProps } from "../AppTypes";
 import "./UserCard.css";
 import { trackPromise } from "react-promise-tracker";
 import { Loader } from "../Loader/Loader";
+import { Link, Outlet } from "react-router-dom";
 
 export const UserCard: React.FC<UserCardProps> = ({ login }) => {
     const initUser: ShortUserProps = {
@@ -57,11 +58,19 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
             <p className="name_login">{firstString}</p>
             <p className="bio">{shortUser.bio}</p>
             <p className="location">{shortUser.location}</p>
+            <p>
+              <Link 
+                to={"/" + login}
+                key={login}>
+                  Page
+              </Link>
+            </p>
           </div>
         </div>
         <div>
           <Loader />
         </div>
+        <Outlet />
       </div>
     )
 };
