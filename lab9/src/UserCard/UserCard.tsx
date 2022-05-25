@@ -46,25 +46,20 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
       <div className="card">
         <div className="user">
           <div className="img">
-            <a href={`https://github.com/${login}`}>
-              <img
-                className="avatar" 
-                src={shortUser.avatar} 
-                title=">github"
-              />
-            </a>
+            <Link 
+              to={"/" + login}
+              key={login}>
+                <img
+                  className="avatar" 
+                  src={shortUser.avatar} 
+                  title=">info"
+                />
+            </Link>
           </div>
           <div className="info">
             <p className="name_login">{firstString}</p>
             <p className="bio">{shortUser.bio}</p>
             <p className="location">{shortUser.location}</p>
-            <p>
-              <Link 
-                to={"/" + login}
-                key={login}>
-                  Page
-              </Link>
-            </p>
           </div>
         </div>
         <div>

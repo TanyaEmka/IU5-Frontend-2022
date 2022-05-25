@@ -15,7 +15,7 @@
 .avatar, .img {
     width: 10vh;
     height: 10vh;
-    border-radius: 50px;
+    border-radius: 50%;
 }
 
 .img:hover {
