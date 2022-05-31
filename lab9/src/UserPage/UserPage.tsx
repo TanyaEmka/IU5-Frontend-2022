@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { UserProps } from "../AppTypes";
 import "./UserPage.css";
 import { trackPromise } from "react-promise-tracker";
-import { Loader } from "../Loader/Loader";
 import { Link, useParams } from "react-router-dom";
-import internal from "stream";
 import { PageUserProps } from "./UserPageTypes";
 
 export const UserPage = () => {

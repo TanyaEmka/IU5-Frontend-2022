@@ -3,6 +3,8 @@ import { UsersProps } from "../AppTypes";
 import { Results } from "../Results/Results";
 import { trackPromise } from "react-promise-tracker";
 import { Loader } from "../Loader/Loader";
+import { changeNickname } from "../store/actions/action";
+import { useAppDispath, useAppSelector } from "../store";
 
 import "./Form.css";
 
@@ -15,6 +17,10 @@ export const Form: React.FC  = () => {
     };
     const [userData, setData] = useState(firstUsers);
     const [errorC, setError] = useState(false);
+
+    //const dispath = useAppDispath();
+    
+    //const nickname = useAppSelector((state) => state.nicknameChanger.nickname);
    
     const changeNickname = (e: any) => {
       setNick(e.target.value);
