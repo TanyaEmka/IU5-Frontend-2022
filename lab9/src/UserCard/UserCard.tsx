@@ -4,7 +4,6 @@ import { UserProps } from "../AppTypes";
 import "./UserCard.css";
 import { trackPromise } from "react-promise-tracker";
 import { Loader } from "../Loader/Loader";
-import { Link, Outlet } from "react-router-dom";
 
 export const UserCard: React.FC<UserCardProps> = ({ login }) => {
     const initUser: ShortUserProps = {
