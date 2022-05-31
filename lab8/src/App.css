@@ -36,3 +36,76 @@
     transform: rotate(360deg);
   }
 }
+
+.card {
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin-left: 5vh;
+  margin-top: 5vh;
+  padding: 15px;
+  word-wrap: break-word;
+  display: inline-block;
+  min-width: 30vh;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.todos {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.points {
+  margin-bottom: 10px;
+}
+
+.button, .text {
+  background-color: white;
+  border: 1px solid #696969;
+  border-radius: 5px;
+  height: 3vh;
+  display: block;
+  margin-top: 1vh;
+}
+
+.text {
+  padding-left: 5px;
+  width: 30vh;
+}
+
+.button {
+  width: 100%;
+}
+
+.button:hover {
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.point {
+  display: flex;
+  flex: 1;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.element {
+  display: flex;
+  margin-bottom: 1vh;
+}
+
+.change_button {
+  background: none;
+  border: none;
+}
+
+.change_button img {
+  height: 3vh;
+  opacity: 0.5;
+}
+
+.change_button img:hover {
+  opacity: 0.8;
+}

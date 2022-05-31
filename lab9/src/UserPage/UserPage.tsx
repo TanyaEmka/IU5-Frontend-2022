@@ -66,6 +66,7 @@ export const UserPage = () => {
     return (
         <div className="user_page">
             <div className="back_a">
+              
               <Link to="/">
                   <div className="back">
                       <span>{"<"}</span>
