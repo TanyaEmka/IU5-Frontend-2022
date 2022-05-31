@@ -9,14 +9,12 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 
 ReactDOM.render(
-    //<Provider store={store}>
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />} />
-                    <Route path=":pagesId" element={<UserPage />} />
-            </Routes>
+                <Routes>
+                    <Route path={process.env.REACT_APP_DEV === "true" ? "" : "/lab9/build"} element={<App />} />
+                        <Route path=":pagesId" element={<UserPage />} />
+                </Routes>
         </BrowserRouter>,
-   //</Provider>,
     document.getElementById("root")
 );
 
