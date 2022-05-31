@@ -2,17 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { App } from "./App";
-import { UserPage } from "./UserPage/UserPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App />} />
-                <Route path=":pagesId" element={<UserPage />} />
-        </Routes>
-    </BrowserRouter>,
+    <App />,
     document.getElementById("root")
 );
 

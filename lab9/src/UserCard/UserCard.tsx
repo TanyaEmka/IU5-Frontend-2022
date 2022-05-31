@@ -46,15 +46,15 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
       <div className="card">
         <div className="user">
           <div className="img">
-            <Link 
-              to={"/" + login}
+            <a 
+              href={"https://github.com/" + login}
               key={login}>
                 <img
                   className="avatar" 
                   src={shortUser.avatar} 
                   title=">info"
                 />
-            </Link>
+            </a>
           </div>
           <div className="info">
             <p className="name_login">{firstString}</p>
@@ -65,7 +65,6 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
         <div>
           <Loader />
         </div>
-        <Outlet />
       </div>
     )
 };
