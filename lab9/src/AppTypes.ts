@@ -1,0 +1,63 @@
+export type UserProps = {
+  avatar_url: string,
+  bio: string | null,
+  blog: string,
+  company: string | null,
+  created_at: string,
+  email: string | null,
+  event_url: string,
+  followers: number,
+  followers_url: string,
+  following: number,
+  following_url: string,
+  gists_url: string,
+  gravatar_id: string,
+  hireable: boolean | null,
+  html_url: string,
+  id: number,
+  location: string | null,
+  login: string,
+  name: string | null,
+  node_id: string,
+  organizations_url: string,
+  public_gists: number,
+  public_repos: number,
+  received_events_url: string,
+  repos_url: string, 
+  site_admin: boolean,
+  starred_url: string,
+  subscriptions_url: string,
+  twitter_username: string | null,
+  type: string,
+  updated_at: string,
+  url: string
+}
+
+export type ApiUserProps = {
+  avatar_url?: string | null,
+  events_url?: string | null,
+  followers_url?: string | null,
+  following_url?: string | null,
+  gists_url?: string | null,
+  gravatar_id?: string | null,
+  html_url?: string | null,
+  id?: number
+  login: string,
+  node_id?: string,
+  organizations_url?: string | null,
+  received_events_url?: string | null,
+  repos_url?: string | null,
+  score?: number,
+  site_admin?: boolean,
+  starred_url?: string | null,
+  subscriptions_url?: string | null,
+  type?: string | null,
+  url?: string | null,
+}
+
+export interface UsersProps {
+  total_count: number, 
+  incomplete_results: boolean,
+  items: Array<ApiUserProps> | Array<any>,
+  message?: string | null
+};
