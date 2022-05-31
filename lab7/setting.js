@@ -23,7 +23,7 @@ function getWeather(e) {
         temp_desc.textContent = data["list"][0]["weather"][0].description;
         tempr.textContent = weatherText;
         icon.src = "https://openweathermap.org/img/wn/" + data["list"][0]["weather"][0].icon + "@2x.png";
-        let windSpeed = Math.round(data["list"][0]["wind"].speed) + "м/c";
+        let windSpeed = Math.round(data["list"][0]["wind"].speed) + "м/с";
         let pressure = Math.round(data["list"][0]["main"].pressure * 100 / 133) + "мм.рт.ст.";
         let humidity = data["list"][0]["main"].humidity + "%";
         other.textContent = windSpeed + " " + humidity + " " + pressure;
