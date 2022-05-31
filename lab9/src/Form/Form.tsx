@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { UsersProps } from "../AppTypes";
 import { Results } from "../Results/Results";
 import { trackPromise } from "react-promise-tracker";
@@ -32,11 +32,12 @@ export const Form: React.FC  = () => {
         })
         .then((data: UsersProps) => {
           setData(firstUsers);
+          console.log(data);
           if (data.items)
               setData({...data});
           setError(false);
 
-          if (data.message == "Validation Failed")
+          if (data.message === "Validation Failed")
           {
             setError(true);
             setData(firstUsers);
@@ -51,7 +52,7 @@ export const Form: React.FC  = () => {
     }
 
     const pressEnter = (e: any) => {
-        if (e.keyCode == 13)
+        if (e.keyCode === 13)
             getUsers(e);
     }
 
