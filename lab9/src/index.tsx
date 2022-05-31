@@ -2,10 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { App } from "./App";
+import { UserPage } from "./UserPage/UserPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 ReactDOM.render(
-    <App />,
+    //<Provider store={store}>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<App />} />
+                    <Route path=":pagesId" element={<UserPage />} />
+            </Routes>
+        </BrowserRouter>,
+   //</Provider>,
     document.getElementById("root")
 );
 
