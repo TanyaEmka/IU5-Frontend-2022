@@ -11,7 +11,7 @@ import { store } from "./store";
 ReactDOM.render(
         <BrowserRouter>
             <Routes>
-                <Route path={process.env.REACT_APP_DEV === "true" ? "" : "lab9/build/index.html/"} element={<App />} />
+                <Route path={process.env.REACT_APP_DEV === "true" ? "" : "lab9/build/"} element={<App />} />
                     <Route path=":pagesId" element={<UserPage />} />
             </Routes>
         </BrowserRouter>,

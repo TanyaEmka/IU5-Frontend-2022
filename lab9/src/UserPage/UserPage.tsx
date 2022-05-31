@@ -55,7 +55,7 @@ export const UserPage = () => {
     return (
         <div className="user_page">
             <div className="back_a">
-              <Link to={process.env.REACT_APP_DEV === "true" ? "/" : "/lab9/build/index.html/"}>
+              <Link to={process.env.REACT_APP_DEV === "true" ? "/" : "/lab9/build/"}>
                   <div className="back">
                       <span>{"<"}</span>
                   </div>
