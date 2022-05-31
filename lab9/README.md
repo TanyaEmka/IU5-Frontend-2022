@@ -17,6 +17,5 @@
 1. Все реализовать на react
 2. Раскатить все на vercel
 
-
 ### Раздел с юзерами
  - https://docs.github.com/en/rest/reference/users
