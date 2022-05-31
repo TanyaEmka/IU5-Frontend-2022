@@ -65,11 +65,13 @@ export const UserPage = () => {
 
     return (
         <div className="user_page">
-            <Link to="/">
-                <div className="back">
-                    <span>{"<"}</span>
-                </div>
-            </Link>
+            <div className="back_a">
+              <Link to="/">
+                  <div className="back">
+                      <span>{"<"}</span>
+                  </div>
+              </Link>
+            </div>
             <div className="left_info">
                 <div className="hat">
                     <img

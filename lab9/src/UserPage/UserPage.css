@@ -38,7 +38,7 @@
     word-wrap: break-word;
 }
 
-.user_page .back {
+.user_page .back, .back_a {
     width: 5vh;
     height: 5vh;
     background-color: #bfbdbd;
@@ -50,7 +50,7 @@
     transition-duration: 0.5s;
 }
 
-.user_page .back:hover {
+.user_page .back:hover, .back_a:hover {
     width: 10vh;
     transition-duration: 0.5s;
 }
