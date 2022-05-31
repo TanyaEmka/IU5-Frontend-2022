@@ -32,6 +32,7 @@ export const Form: React.FC  = () => {
         })
         .then((data: UsersProps) => {
           setData(firstUsers);
+          console.log(data);
           if (data.items)
               setData({...data});
           setError(false);
