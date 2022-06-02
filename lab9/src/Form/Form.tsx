@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UsersProps } from "../AppTypes";
 import { Results } from "../Results/Results";
 import { trackPromise } from "react-promise-tracker";
 import { Loader } from "../Loader/Loader";
-import { changeNickname } from "../store/actions/action";
-import { useAppDispath, useAppSelector } from "../store";
-
+import { changeNickname } from "../store/actions/changeNickname";
+import { useAppDispath } from "../store";
+import store from "../store";
 import "./Form.css";
 
 export const Form: React.FC  = () => {
-    const [nickname, setNick] = useState('');
+    const [nickname, setNick] = useState(store.getState().nickname);
     const firstUsers: UsersProps = {
       total_count: -1, 
       incomplete_results: false,
@@ -18,15 +18,14 @@ export const Form: React.FC  = () => {
     const [userData, setData] = useState(firstUsers);
     const [errorC, setError] = useState(false);
 
-    //const dispath = useAppDispath();
-    
-    //const nickname = useAppSelector((state) => state.nicknameChanger.nickname);
-   
-    const changeNickname = (e: any) => {
+    const dispath = useAppDispath();
+
+    const changeNicknameInput = (e: React.ChangeEvent<HTMLInputElement>) => {
       setNick(e.target.value);
     }
   
-    const getUsers = (e: any) => {
+    const getUsers = (e: React.MouseEvent<HTMLElement>) => {
+      dispath(changeNickname(nickname));
       trackPromise(
         fetch(`https://api.github.com/search/users?q=${nickname}`,
         {
@@ -39,7 +38,6 @@ export const Form: React.FC  = () => {
         })
         .then((data: UsersProps) => {
           setData(firstUsers);
-          console.log(data);
           if (data.items)
               setData({...data});
           setError(false);
@@ -70,7 +68,7 @@ export const Form: React.FC  = () => {
                 type="text" 
                 value={nickname} 
                 placeholder="Enter nickname" 
-                onChange={changeNickname}
+                onChange={changeNicknameInput}
                 className="text"
               />
               <input 

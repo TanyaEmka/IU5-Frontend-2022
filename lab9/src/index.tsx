@@ -6,15 +6,17 @@ import { UserPage } from "./UserPage/UserPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import store from "./store";
 
 ReactDOM.render(
+    <Provider store={store}>
         <BrowserRouter>
             <Routes>
                 <Route path={process.env.REACT_APP_DEV === "true" ? "" : "lab9/build/"} element={<App />} />
                     <Route path=":pagesId" element={<UserPage />} />
             </Routes>
-        </BrowserRouter>,
+        </BrowserRouter>
+    </Provider>,
     document.getElementById("root")
 );
 

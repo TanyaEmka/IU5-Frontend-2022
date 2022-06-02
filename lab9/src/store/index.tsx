@@ -1,23 +1,19 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { combineReducers } from "redux";
 import { configureStore } from '@reduxjs/toolkit';
-import { INicknameReducer, nicknameReducer } from "./reducers/reducer";
-import { NicknameActions } from "./actions/action";
-import thunk from "redux-thunk";
+import { INicknameReducer, nicknameReducer } from "./reducers/changeNickname";
+import { NicknameActions } from "./actions/changeNickname";
 
 export interface IAppStore {
-    nicknameChanger: INicknameReducer,
+    nicknameReducer: INicknameReducer,
 }
-
-export const reducers = combineReducers({
-    nicknameChanger: nicknameReducer,
-});
 
 export type AppActions = NicknameActions;
 
-export const store = configureStore({
-    reducer: {...reducers},
-})
+const store = configureStore({
+    reducer: nicknameReducer
+});
+
+export default store;
 
 export type AppDispath = typeof store.dispatch;
 

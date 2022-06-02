@@ -1,4 +1,4 @@
-import { NicknameActions } from "../actions/action";
+import { NicknameActions } from "../actions/changeNickname";
 
 export interface INicknameReducer {
     nickname: string,
@@ -13,9 +13,10 @@ export const nicknameReducer = (state = initialState, action: NicknameActions): 
         case 'NICKNAME/CHANGE':
             return {
                 ...state,
-                nickname: action.changer.newNickname,
+                nickname: action.payload,
             }
         default:
             return state;
     }
 };
+
