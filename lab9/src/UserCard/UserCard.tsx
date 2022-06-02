@@ -5,17 +5,22 @@ import "./UserCard.css";
 import { trackPromise } from "react-promise-tracker";
 import { Loader } from "../Loader/Loader";
 import { Link, Outlet } from "react-router-dom";
+import store from "../store";
+import { changeUserCard } from "../store/actions/changeUserCard";
+import { useAppDispath } from "../store";
 
 export const UserCard: React.FC<UserCardProps> = ({ login }) => {
     const initUser: ShortUserProps = {
-      name: "",
-      bio: "",
-      location: "",
-      avatar: ""
+      name: store.getState().userCardR.userCard.name,
+      bio: store.getState().userCardR.userCard.bio,
+      location: store.getState().userCardR.userCard.location,
+      avatar: store.getState().userCardR.userCard.avatar
     }
   
-    const [shortUser, setShortUser] = useState(initUser);
+    const [shortUser, setShortUser] = useState(store.getState().userCardR.userCard);
     const [firstString, setFirstString] = useState("");
+
+    const dispath = useAppDispath();
   
     useEffect(() => {
       trackPromise(
@@ -37,6 +42,7 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
             setFirstString(login);
           else 
             setFirstString(shortUser.name + " | " + login);
+          dispath(changeUserCard(initUser));
           setShortUser(initUser);
         })
       );
@@ -66,6 +72,7 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
         <div>
           <Loader />
         </div>
+        <Outlet />
       </div>
     )
 };

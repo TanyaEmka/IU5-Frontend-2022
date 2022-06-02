@@ -38,11 +38,16 @@
     word-wrap: break-word;
 }
 
+.user_page .back {
+    border: 2px solid #bfbdbd;
+    border-left: none;
+}
+
 .user_page .back, .back_a {
     width: 5vh;
     height: 5vh;
-    background-color: #bfbdbd;
-    color: white;
+    background-color: white;
+    color: #bfbdbd;
     text-align: center;
     line-height: 5vh;
     margin-top: 2vh;

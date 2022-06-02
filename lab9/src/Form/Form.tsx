@@ -7,15 +7,16 @@ import { changeNickname } from "../store/actions/changeNickname";
 import { useAppDispath } from "../store";
 import store from "../store";
 import "./Form.css";
+import { changeData } from "../store/actions/changeData";
 
 export const Form: React.FC  = () => {
-    const [nickname, setNick] = useState(store.getState().nickname);
+    const [nickname, setNick] = useState(store.getState().nicknameR.nickname);
     const firstUsers: UsersProps = {
       total_count: -1, 
       incomplete_results: false,
       items: []
     };
-    const [userData, setData] = useState(firstUsers);
+    const [userData, setData] = useState(store.getState().dataR.userData);
     const [errorC, setError] = useState(false);
 
     const dispath = useAppDispath();
@@ -38,18 +39,23 @@ export const Form: React.FC  = () => {
         })
         .then((data: UsersProps) => {
           setData(firstUsers);
-          if (data.items)
-              setData({...data});
+          dispath(changeData(firstUsers));
+          if (data.items) {
+            dispath(changeData({...data}));
+            setData({...data});  
+          }
           setError(false);
 
           if (data.message === "Validation Failed")
           {
             setError(true);
+            dispath(changeData(firstUsers));
             setData(firstUsers);
           }
         })
         .catch(() => {
           setError(true);
+          dispath(changeData(firstUsers));
           setData(firstUsers);
           console.log("ERROR");
         })
@@ -79,7 +85,7 @@ export const Form: React.FC  = () => {
               />
             </div>
             <Loader />
-            <Results errorC={errorC} userDataC={userData} />
+            <Results errorC={errorC} userDataC={store.getState().dataR.userData} />
         </div>
     )
 };

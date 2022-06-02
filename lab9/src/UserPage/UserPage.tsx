@@ -4,6 +4,7 @@ import "./UserPage.css";
 import { trackPromise } from "react-promise-tracker";
 import { Link, useParams } from "react-router-dom";
 import { PageUserProps } from "./UserPageTypes";
+import { Loader } from "../Loader/Loader";
 
 export const UserPage = () => {
     let params = useParams();
@@ -83,6 +84,9 @@ export const UserPage = () => {
                 <div className="f_f">
                     <p>{shortUser.followers} followers | {shortUser.following} following</p>
                 </div>
+            </div>
+            <div>
+              <Loader />
             </div>
         </div>
     );
