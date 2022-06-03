@@ -11,10 +11,10 @@ import { useAppDispath } from "../store";
 
 export const UserCard: React.FC<UserCardProps> = ({ login }) => {
     const initUser: ShortUserProps = {
-      name: store.getState().userCardR.userCard.name,
-      bio: store.getState().userCardR.userCard.bio,
-      location: store.getState().userCardR.userCard.location,
-      avatar: store.getState().userCardR.userCard.avatar
+      name: "",
+      bio: "",
+      location: "",
+      avatar: ""
     }
   
     const [shortUser, setShortUser] = useState(store.getState().userCardR.userCard);
@@ -38,12 +38,12 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
           initUser.bio = data.bio;
           initUser.location = data.location;
           initUser.avatar = data.avatar_url;
-          if (shortUser.name == null)
-            setFirstString(login);
-          else 
-            setFirstString(shortUser.name + " | " + login);
           dispath(changeUserCard(initUser));
           setShortUser(initUser);
+          if (store.getState().userCardR.userCard.name == null)
+            setFirstString(login);
+          else 
+            setFirstString(store.getState().userCardR.userCard.name + " | " + login);
         })
       );
     }, [login]);

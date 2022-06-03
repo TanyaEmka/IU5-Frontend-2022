@@ -19,7 +19,12 @@ export const userCardReducer = (state = initialState, action: UserCardActions): 
         case 'USERCARD/CHANGE':
             return {
                 ...state,
-                userCard: action.payload
+                userCard: {
+                    name: action.payload.name,
+                    bio: action.payload.bio,
+                    location: action.payload.location,
+                    avatar: action.payload.avatar
+                }
             }
         default:
             return state
