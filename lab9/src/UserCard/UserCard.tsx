@@ -22,6 +22,7 @@ export const UserCard: React.FC<UserCardProps> = ({ login }) => {
 
     const dispath = useAppDispath();
   
+    
     useEffect(() => {
       trackPromise(
         fetch(`https://api.github.com/users/${login}`, 
